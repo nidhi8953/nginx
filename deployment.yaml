@@ -5,6 +5,7 @@ metadata:
   labels:
     app: nidsdemo
   name: nidsdemo
+  namespace: dhruv
 spec:
   replicas: 1
   selector:
@@ -27,6 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lb-nids-service
+  namespace: dhruv
   labels:
     app: lb-nids-service
 spec:
