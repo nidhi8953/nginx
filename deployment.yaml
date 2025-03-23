@@ -32,7 +32,7 @@ metadata:
   labels:
     app: lb-nids-service
 spec:
-  type: NodePort
+  type: Loadbalancer
   ports:
   - port: 80
     targetPort: 5000
