@@ -18,7 +18,7 @@ spec:
         app: nidsdemo
     spec:
       containers:
-      - image: nginx:latest
+      - image: nginx
         name: nidsdemo
         resources: {}
 status: {}
