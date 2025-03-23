@@ -3,36 +3,36 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    app: nidsdemo
+  name: nidsdemo
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
-      app: flaskdemo
+      app: nidsdemo
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: flaskdemo
+        app: nidsdemo
     spec:
       containers:
-      - image: nidhisarup8953/test:11
-        name: flaskdemo
+      - image: nginx:latest
+        name: nidsdemo
         resources: {}
 status: {}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: lb-service
+  name: lb-nids-service
   labels:
-    app: lb-service
+    app: lb-nids-service
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 5000
   selector:
-    app: flaskdemo
+    app: nidsdemo
